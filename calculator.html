@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <input id="display" readonly placeholder="0">
+        <div class="keys">
+
+            <button onclick="cleardisplay()" class="key" id="equal">C</button>
+            <button onclick="backspace()" class="key"><i class="fa-solid fa-delete-left"></i></button>
+
+            <button onclick="btn('/')" class="key"><i class="fa-solid fa-divide"></i></button>
+            <button onclick="btn('7')" class="key">7</button>
+            <button onclick="btn('8')" class="key">8</button>
+            <button onclick="btn('9')" class="key">9</button>
+
+            <button onclick="btn('-')" class="key">-</button>
+            <button onclick="btn('4')" class="key">4</button>
+            <button onclick="btn('5')" class="key">5</button>
+            <button onclick="btn('6')" class="key">6</button>
+
+            <button onclick="btn('+')" class="key">+</button>
+            <button onclick="btn('1')" class="key">1</button>
+            <button onclick="btn('2')" class="key">2</button>
+            <button onclick="btn('3')" class="key">3</button>
+            <button onclick="btn('*')" class="key">x</button>
+            
+            <button onclick="btn('00')" class="key">00</button>
+            <button onclick="btn('0')" class="key">0</button>
+            <button onclick="btn('.')" class="key">.</button>
+            <button onclick="calculate('=')" class="key" id="equall">=</button>
+
+
+
+
+
+        </div>
+
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
