@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shm candle shop</title>
+    <link rel="stylesheet" href="ecom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <section class="header">
+        <a href="#"><img src="new.png" alt="" class="img"></a>
+        <div>
+            <ul class="navbar">
+                <li><a class="active" href="ecom.html">home</a></li>
+                <li><a href="shop.html">shop</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li class="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div class="mobile">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+              <i id="bar" class="fa-solid fa-outdent"></i>
+        </div>
+    </section>
+     <section class="section-p1 prodetails">
+        <div class="single-pro-img">
+            <img src="dj.jpg" width="100%" class="mainimg"  id="product-img"   alt="">
+            <div class="small-img-group">
+                <div class="small-img-col" >
+                 <img src="dj.jpg" width="100%" class="small-img"    alt="">
+                 </div>
+                <div class="small-img-col">
+                  <img src="blackja.webp" width="100%" class="small-img" alt="">
+                </div>
+                 <div class="small-img-col">
+                  <img src="pinkja.jpg" width="100%" class="small-img" alt="">
+                </div>
+                 <div class="small-img-col">
+                  <img src="purple.webp" width="100%" class="small-img" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6>Sweet, Lush, and Vibrant</h6>
+            <h4>Scented jar candle</h4>
+            <h2 id="unit-price">600RS</h2>
+            <select id="color-select">
+                <option value="">Select color</option>
+                 <option value="blackja.webp">black</option>
+                  <option value="dj.jpg">white</option>
+                   <option value="pinkja.jpg">pink</option>
+                    <option value="purple.webp">lylic</option>
+
+            </select>
+            <br>
+            <input type="number" value="1" id="quantity" min="1">
+            <br>
+            <button  class="normal" data-name="scented jar candle" data-price="600" data-img="dj.jpg">Add to cart</button>
+            <h4>Product details</h4>
+            <span>
+               The Elegant Trinket Set is crafted from high-quality ceramic with a smooth finish, making it a stylish and practical addition to any space. Its minimalist design, enhanced with delicate patterns, perfectly complements modern interiors. This set is ideal for storing jewelry, keys, coins, or other small decorative items, keeping your essentials organized in style. Available in white, black, and pastel shades, the trinket set is both durable and lightweight. Compact in size, it fits easily on dressing tables, nightstands, or office desks, adding elegance while saving space.
+            </span>
+        </div>
+     </section>
+    <!-- banner secction -->
+    <section class="banner , section-m1" >
+        <h4>Repair services</h4>
+        <h2>"Shop ₨3000+ and Get Free Shipping"</h2>
+        <button>Explore More</button>
+    </section>
+    <!-- footer -->
+    <footer class="foot">
+        <div class="col">
+            <img src="img.jpeg" alt="">
+            <h4>contact</h4>
+            <p><strong>Address</strong>: iabal town khanewal</p>
+            <p> <strong>Phone</strong>:+923209495625</p>
+            <p><strong>Hours</strong>:twenty four seven available. Mon-sat</p>
+        </div>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            
+            <a href="#">About us</a>
+            <a href="#">Delivery information</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">My wichlist</a>
+             <a href="#">View Cart</a>
+              <a href="#">Track My Order</a>
+               <a href="#">Help</a>
+        </div>
+    </footer>
+       <!-- // if we click image options the img has been slescted and open into main img -->
+
+ <script>
+   
+    const mainimg=document.getElementsByClassName("mainimg")[0];
+    const smalling=document.getElementsByClassName("small-img");
+      
+
+    smalling[0].onclick=function(){
+    mainimg.src=smalling[0].src;
+    }
+    smalling[1].onclick=function(){
+    mainimg.src=smalling[1].src;
+    }
+    smalling[2].onclick=function(){
+    mainimg.src=smalling[2].src;
+    }
+    smalling[3].onclick=function(){
+    mainimg.src=smalling[3].src;
+    }
+// update quantity
+    let baseprice=parseInt(document.getElementById("unit-price").innerText);
+    let quantityInput=document.getElementById("quantity");
+    let unitprice=document.getElementById('unit-price');
+    quantityInput.addEventListener("input",()=>{
+        let quantity=parseInt(quantityInput.value)
+        let newPrice=baseprice*quantity;
+        unitprice.innerText=newPrice;
+    })
+ 
+     let colorselect=document.getElementById("color-select");
+let productImg=document.getElementById("product-img");
+colorselect.addEventListener("change",()=>{
+    let selectedImg=colorselect.value;
+    if(selectedImg){
+        productImg.src=selectedImg
+    }
+})
+ </script>
+<script src="ecom.js"></script>
+</body>
+
+</html>

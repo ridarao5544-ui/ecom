@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shm candle shop</title>
+    <link rel="stylesheet" href="ecom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <section class="header">
+        <a href="#"><img src="new.png" alt="" class="img"></a>
+        <div>
+            <ul class="navbar">
+                <li><a href="ecom.html">home</a></li>
+                <li><a href="shop.html">shop</a></li>
+                <li><a href="contact.html">contact</a></li>
+                <li class="lg-bag"><a class="active" href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a></li>
+                <a href="#" class="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div class="mobile">
+            <a href="cart.html"><i class="fa-solid fa-bag-shopping"></i></a>
+            <i id="bar" class="fa-solid fa-outdent"></i>
+        </div>
+    </section>
+    <!-- header -->
+    <section class="page-header about-header">
+        <h1>#lets talk</h1>
+        <p>leave a message,We love to hear from you </p>
+    </section>
+    <!-- <section class="cart section-p1">
+        <table width="100%" ;>
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody class="cart-body">
+    </tbody>
+    </section>
+    </table>
+    <section class="cart-add section-p1">
+        <div class="sub-total">
+            <h3>Cart totals</h3>
+            <table>
+                <tr>
+                    <td>Cart sub-totals</td>
+                    <td id="cart-subtotal">0</td>
+                </tr>
+                <tr>
+                    <td>shipping</td>
+                    <td id="shipping">300rs</td>
+                </tr>
+                <tr>
+                    <td><strong>total</strong></td>
+                    <td><strong id="grand-total">0</strong></td>
+                </tr>
+            </table>
+            </tbody>
+            <button>Procced to checkout</button>
+        </div>
+        </secion>
+        </table>
+    </section> -->
+    <section class="cart section-p1">
+  <table width="100%">
+    <thead>
+      <tr>
+        <td>Remove</td>
+        <td>Image</td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Subtotal</td>
+      </tr>
+    </thead>
+    <tbody class="cart-body">
+       <tr>
+  <td><a href="#"><i class="fa-regular fa-circle-xmark"></i></a></td>
+  <td><img src="p1.jpg" width="50"></td>
+  <td>Scented Candle</td>
+  <td class="price">500</td> <!-- Yahan actual product price aana chahiye -->
+  <td><input type="number" class="quantity" value="1" min="1"></td>
+  <td class="row-subtotal">500</td>
+</tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="cart-add section-p1">
+  <div class="sub-total">
+    <h3>Cart totals</h3>
+    <table>
+      <tr>
+        <td>Cart sub-totals</td>
+        <td id="cart-subtotal">0</td>
+      </tr>
+      <tr>
+        <td>Shipping</td>
+        <td id="shipping">300</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong id="grandtotal">0</strong></td>
+      </tr>
+    </table>
+    <button>Proceed to checkout</button>
+  </div>
+</section>
+    <!-- banner secction -->
+    <section class="banner , section-m1">
+        <h4>Repair services</h4>
+        <h2>"Shop ₨3000+ and Get Free Shipping"</h2>
+        <button>Explore More</button>
+    </section>
+    <!-- footer -->
+    <footer class="foot">
+        <div class="col">
+            <img src="img.jpeg" alt="">
+            <h4>contact</h4>
+            <p><strong>Address</strong>: iabal town khanewal</p>
+            <p> <strong>Phone</strong>:+923209495625</p>
+            <p><strong>Hours</strong>:twenty four seven available. Mon-sat</p>
+        </div>
+        <div class="follow">
+            <h4>Follow us</h4>
+            <div class="icon">
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+
+            <a href="#">About us</a>
+            <a href="#">Delivery information</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
+
+        </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">My wichlist</a>
+            <a href="#">View Cart</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+    </footer>
+    <script>
+
+        // remove items
+           const crosses=document.querySelectorAll('.cross')
+          crosses.forEach(cross=>{    //select every row
+         cross.addEventListener('click',(e)=>{
+             e.preventDefault();// it is use to stop reload
+             const row=cross.closest("tr"); // when button is clicked closest search the element
+             if(row){
+                row.remove();
+             }
+          })
+        })
+        //    //update total values
+        // const crosses = document.querySelectorAll('.cross');
+        // crosses.forEach((cross, index) => {
+        //     cross.addEventListener('click', (e) => {
+        //         e.preventDefault();
+        //         const row = cross.closest("tr");
+        //         if (row) {
+        //             row.remove();
+
+        //             // remove from localStorage too
+        //             cart.splice(index, 1);
+        //             localStorage.setItem("cart", JSON.stringify(cart));
+        //         }
+        //     });
+        // });
+        // for total cart updating
+      
+
+    </script>
+    <script src="ecom.js"></script>
+</body>
+</html>
